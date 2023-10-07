@@ -37,7 +37,6 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-// isso é um comentário
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
