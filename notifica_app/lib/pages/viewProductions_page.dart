@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notifica_app/assets/colors/colors.dart';
 
-// criar outra classe
 
 class ViewProductions extends StatefulWidget {
   const ViewProductions({super.key});

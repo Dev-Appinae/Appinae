@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 width: double.maxFinite,
                 child: ElevatedButton(
-                  onPressed: () => context.go('/viewProductions'),
+                  onPressed: () => context.go('/sobrePage'),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: PaletaAppinae.amareloClaro,
                       shape: RoundedRectangleBorder(
