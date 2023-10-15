@@ -1,10 +1,6 @@
-/*// ignore_for_file: file_names
-
-import 'package:flutter/material.dart';
-//import 'package:go_router/go_router.dart';
-*/
 import 'package:appinae_app/assets/colors/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SobrePage extends StatelessWidget {
   const SobrePage({super.key});
@@ -21,7 +17,19 @@ class SobrePage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // Inserindo a imagem
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () => context.go('/'),
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    size: 32,
+                    color: PaletaAppinae.preto,
+                  ),
+                ),
+              ],
+            ),
+
             SizedBox(
               width: 200,
               height: 200,
@@ -63,6 +71,7 @@ class SobrePage extends StatelessWidget {
           ],
         ),
       ),
+      
     );
   }
 }
