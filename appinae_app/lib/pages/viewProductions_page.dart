@@ -49,8 +49,38 @@ class _ViewProductionsState extends State<ViewProductions> {
                 ),
               ],
             ),
+            Container(
+              margin: const EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.0),
+                color: PaletaAppinae.fundoApp,
+                border: Border.all(
+                  color: Colors.black,
+                  width: 1.0,
+                ),
+              ),
+              child: Row(
+                children: [
+                  const Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Pesquisar',
+                        contentPadding: EdgeInsets.all(8.0),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.search),
+                    onPressed: () {
+                      // logica da pesquisaa
+                    },
+                  ),
+                ],
+              ),
+            ),
             Padding(
-              padding: const EdgeInsets.only(top: 700),
+              padding: const EdgeInsets.only(top: 650),
               child: Form(
                 child: Column(
                   children: [
@@ -101,7 +131,7 @@ class _ViewProductionsState extends State<ViewProductions> {
             label: 'Mapa',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.info_outline),
+            icon: Icon(Icons.bug_report_outlined), // Ícone de produções
             label: 'Produções',
           ),
           BottomNavigationBarItem(

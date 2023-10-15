@@ -1,9 +1,27 @@
-import 'package:appinae_app/assets/colors/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:appinae_app/assets/colors/colors.dart';
 
-class SobrePage extends StatelessWidget {
+class SobrePage extends StatefulWidget {
   const SobrePage({super.key});
+
+  @override
+  State<SobrePage> createState() => _SobrePageState();
+}
+
+class _SobrePageState extends State<SobrePage> {
+  int _selectedIndex = 3; // Índice inicial (Sobre)
+
+  void _onItemTapped(int index) {
+    if (index == 0) {
+      context.go('/viewPerfil');
+    } else if (index == 2) {
+      context.go('/viewProductions');
+    }
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +47,6 @@ class SobrePage extends StatelessWidget {
                 ),
               ],
             ),
-
             SizedBox(
               width: 200,
               height: 200,
@@ -71,7 +88,31 @@ class SobrePage extends StatelessWidget {
           ],
         ),
       ),
-      
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person), // Ícone de perfil
+            label: 'Perfil',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map), // Ícone de mapa
+            label: 'Mapa',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bug_report_outlined), // Ícone de produções
+            label: 'Produções',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info), // Ícone de informação
+            label: 'Sobre',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black, // Cor do ícone selecionado
+        unselectedItemColor: Colors.black,
+        // backgroundColor:PaletaAppinae.amareloClaro, //isso aqui ainda não funcionou
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
