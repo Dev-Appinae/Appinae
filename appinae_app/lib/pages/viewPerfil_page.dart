@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:appinae_app/assets/colors/colors.dart';
@@ -12,6 +10,19 @@ class ViewPerfil extends StatefulWidget {
 }
 
 class _ViewPerfilState extends State<ViewPerfil> {
+  int _selectedIndex = 0; // Índice inicial (Perfil)
+
+  void _onItemTapped(int index) {
+    if (index == 2) {
+      context.go('/viewProductions');
+    } else if (index == 3) {
+      context.go('/sobrePage');
+    }
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,8 +48,6 @@ class _ViewPerfilState extends State<ViewPerfil> {
                 ),
               ],
             ),
-
-            
             Container(
               margin: const EdgeInsets.only(
                 top: 20,
@@ -140,6 +149,30 @@ class _ViewPerfilState extends State<ViewPerfil> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person), // Ícone de perfil
+            label: 'Perfil',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map), // Ícone de mapa
+            label: 'Mapa',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bug_report_outlined), // Ícone de produções
+            label: 'Produções',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info), // Ícone de informação
+            label: 'Sobre',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black, // Cor do ícone selecionado
+        unselectedItemColor: Colors.black, // Cor do ícone não selecionado
+        onTap: _onItemTapped,
       ),
     );
   }
