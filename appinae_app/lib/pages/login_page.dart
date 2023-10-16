@@ -53,7 +53,9 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 width: double.maxFinite,
                 child: ElevatedButton(
-                  onPressed: () => context.go('/viewProductions'),
+                  onPressed: () => context.go(
+                    '/minhasprodutions',
+                  ),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: PaletaAppinae.amareloClaro,
                       shape: RoundedRectangleBorder(
@@ -71,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 width: double.maxFinite,
                 child: ElevatedButton(
-                  onPressed: () => context.go('/createAccount'),
+                  onPressed: () => context.go('/viewPerfil'),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: PaletaAppinae.amareloClaro,
                       shape: RoundedRectangleBorder(

@@ -1,3 +1,4 @@
+import 'package:appinae_app/pages/mymaps_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:appinae_app/assets/colors/colors.dart';
@@ -24,31 +25,35 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
       builder: (BuildContext context, GoRouterState state) {
         return const CreateAccountPage();
       }),
-    GoRoute(
+  GoRoute(
       path: '/registerApiarios',
       builder: (BuildContext context, GoRouterState state) {
         return const RegisterApiarios();
       }),
-         GoRoute(
+  GoRoute(
       path: '/viewProductions',
       builder: (BuildContext context, GoRouterState state) {
         return const ViewProductions();
       }),
-        GoRoute(
+  GoRoute(
       path: '/viewPerfil',
       builder: (BuildContext context, GoRouterState state) {
         return const ViewPerfil();
       }),
-      GoRoute(
+  GoRoute(
       path: '/editPerfil',
       builder: (BuildContext context, GoRouterState state) {
         return const EditPerfil();
       }),
-      
-      GoRoute(
+  GoRoute(
       path: '/sobrePage',
       builder: (BuildContext context, GoRouterState state) {
         return const SobrePage();
+      }),
+  GoRoute(
+      path: '/minhasprodutions',
+      builder: (BuildContext context, GoRouterState state) {
+        return MinhasProducoesMapa();
       })
 ]);
 
