@@ -11,7 +11,7 @@ class MinhasProducoesMapa extends StatefulWidget {
 }
 
 class _MinhasProducoesMapaState extends State<MinhasProducoesMapa> {
-  int _selectedIndex = 2; // Defina o índice inicial para "Produções"
+  int _selectedIndex = 1; // Defina o índice inicial para "Produções"
 
   void _onItemTapped(int index) {
     if (index == 0) {
@@ -33,7 +33,16 @@ class _MinhasProducoesMapaState extends State<MinhasProducoesMapa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: PaletaAppinae.fundoApp,
         title: const Text('Minhas Produções'),
+        leading: IconButton(
+          onPressed: () => context.go('/'),
+          icon: const Icon(
+            Icons.arrow_back,
+            size: 32,
+            color: PaletaAppinae.preto,
+          ),
+        ),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -61,11 +70,11 @@ class _MinhasProducoesMapaState extends State<MinhasProducoesMapa> {
           ),
         ],
         currentIndex: _selectedIndex,
+        backgroundColor: PaletaAppinae.amareloEscuro,
         selectedItemColor: Colors.black, // Cor do ícone selecionado
-        unselectedItemColor: Colors.grey, // Cor do ícone não selecionado
+        unselectedItemColor: Colors.black, // Cor do ícone não selecionado
         onTap: _onItemTapped,
-        backgroundColor:
-            Color(0xFFFBD894), // Cor de fundo da barra de navegação
+        // Cor de fundo da barra de navegação
       ),
     );
   }

@@ -13,7 +13,11 @@ class _ViewPerfilState extends State<ViewPerfil> {
   int _selectedIndex = 0; // Índice inicial (Perfil)
 
   void _onItemTapped(int index) {
-    if (index == 2) {
+    if (index == 0) {
+      context.go('');
+    } else if (index == 1) {
+      context.go('/minhasprodutions');
+    } else if (index == 2) {
       context.go('/viewProductions');
     } else if (index == 3) {
       context.go('/sobrePage');
@@ -125,7 +129,7 @@ class _ViewPerfilState extends State<ViewPerfil> {
             SizedBox(
               width: double.maxFinite,
               child: ElevatedButton(
-                onPressed: () => context.go('/registerApiarios'),
+                onPressed: () => context.go('/editPerfil'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: PaletaAppinae.amareloClaro,
                   shape: RoundedRectangleBorder(

@@ -181,7 +181,9 @@ class _EditPerfilState extends State<EditPerfil> {
                       SizedBox(
                         width: double.maxFinite,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => context.go(
+                            '/viewPerfil',
+                          ),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: PaletaAppinae.amareloClaro,
                               shape: RoundedRectangleBorder(
@@ -199,7 +201,7 @@ class _EditPerfilState extends State<EditPerfil> {
                       SizedBox(
                         width: double.maxFinite,
                         child: ElevatedButton(
-                          onPressed: () => context.go('/'),
+                          onPressed: () => context.go('/viewPerfil'),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: PaletaAppinae.fundoApp,
                               shape: RoundedRectangleBorder(

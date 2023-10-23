@@ -53,8 +53,9 @@ final GoRouter _router = GoRouter(routes: <RouteBase>[
   GoRoute(
       path: '/minhasprodutions',
       builder: (BuildContext context, GoRouterState state) {
-        return MinhasProducoesMapa();
+        return const MinhasProducoesMapa();
       })
+      
 ]);
 
 class MyApp extends StatelessWidget {

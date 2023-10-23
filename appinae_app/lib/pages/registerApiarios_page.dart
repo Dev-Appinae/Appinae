@@ -206,7 +206,7 @@ class _RegisterApiariosState extends State<RegisterApiarios> {
                       SizedBox(
                         width: double.maxFinite,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => context.go('/viewProductions'),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: PaletaAppinae.amareloClaro,
                               shape: RoundedRectangleBorder(
