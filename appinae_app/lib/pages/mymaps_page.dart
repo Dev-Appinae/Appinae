@@ -1,23 +1,82 @@
+import 'package:appinae_app/assets/colors/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:go_router/go_router.dart';
 
-class MinhasProducoesMapa extends StatelessWidget {
+class MinhasProducoesMapa extends StatefulWidget {
+  const MinhasProducoesMapa({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _MinhasProducoesMapaState createState() => _MinhasProducoesMapaState();
+}
+
+class _MinhasProducoesMapaState extends State<MinhasProducoesMapa> {
+  int _selectedIndex = 2; // Defina o índice inicial para "Produções"
+
+  void _onItemTapped(int index) {
+    if (index == 0) {
+      context.go('/viewPerfil');
+    } else if (index == 1) {
+      // Adicionar a navegação
+    } else if (index == 2) {
+      context.go('/viewProductions');
+    } else if (index == 3) {
+      Navigator.of(context).pushNamed('/sobrePage');
+    }
+
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Minhas Produções'),
+        title: const Text('Minhas Produções'),
       ),
-      body: MapaGoogle(),
+      body: Container(
+        decoration: const BoxDecoration(
+          color: PaletaAppinae.fundoApp, // Cor de fundo
+        ),
+        // child: GoogleMap(), // Substitua pelo seu mapa do Google
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person), // Ícone de perfil
+            label: 'Perfil',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map), // Ícone de mapa
+            label: 'Mapa',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bug_report_outlined),
+            label: 'Produções',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info), // Ícone de informação
+            label: 'Sobre',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black, // Cor do ícone selecionado
+        unselectedItemColor: Colors.grey, // Cor do ícone não selecionado
+        onTap: _onItemTapped,
+        backgroundColor:
+            Color(0xFFFBD894), // Cor de fundo da barra de navegação
+      ),
     );
   }
 }
-class MapaGoogle extends StatefulWidget {
+
+/*class MapaGoogle extends StatefulWidget {
   @override
   _MapaGoogleState createState() => _MapaGoogleState();
-}
+}*/
 
-class _MapaGoogleState extends State<MapaGoogle> {
+/*class _MapaGoogleState extends State<MapaGoogle> {
   late GoogleMapController mapController;
 
   @override
@@ -32,8 +91,4 @@ class _MapaGoogleState extends State<MapaGoogle> {
       ),
     );
   }
-}
-
-
-
-
+}*/
