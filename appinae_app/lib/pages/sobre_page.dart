@@ -78,7 +78,6 @@ class _SobrePageState extends State<SobrePage> {
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Sanderson Cesar'),
                 Text('Caio Daoud'),
                 Text('Tiago Segato'),
                 Text('Beatriz Silva'),
